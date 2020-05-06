@@ -67,7 +67,11 @@ export default AuthenticatedRoute.extend(ShortcutsRoute, {
         },
 
         redirectToContentScreen() {
-            this.transitionTo('posts');
+            if (window.location !== window.parent.location){
+                window.parent.closeIframe();
+            } else {	
+                this.transitionTo('posts');
+            }
         },
 
         willTransition(transition) {

@@ -8,10 +8,10 @@
             <div class="flex items-center pe-auto">
                 {{#if this.ui.isFullScreen}}
                     <div class="{{ui-text "ts"}} h9 br b--lightgrey pl3 pr4 flex items-center br2 br--left {{unless this.infoMessage "bg-white"}}">
-                        <LinkTo @route={{pluralize this.post.displayName }} @classNames="blue link fw4 flex items-center" data-test-link={{pluralize this.post.displayName}}>
+                        <button type="button" {{action 'closeAction'}} class="blue link fw4 flex items-center">
                             {{svg-jar "arrow-left" class="w3 fill-blue mr1 nudge-right--2"}}
-                            {{capitalize (pluralize this.post.displayName)}}
-                        </LinkTo>
+                            Back
+                        </button>
                     </div>
                 {{/if}}
                 <div class="flex items-center pl4 pr4 f8 nudge-left--1 h9 br2 br--right {{unless this.infoMessage "bg-white"}}">

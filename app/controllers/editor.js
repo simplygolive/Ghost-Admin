@@ -228,6 +228,15 @@ export default Controller.extend({
             }
         },
 
+        closeAction() {
+            if (window.location !== window.parent.location){
+                window.parent.closeIframe();
+            } else {
+                let returnRoute = pluralize(this.post.displayName);
+                this.transitionToRoute(returnRoute);
+            }
+        },
+        
         // called by the "are you sure?" modal
         leaveEditor() {
             let transition = this.leaveEditorTransition;
